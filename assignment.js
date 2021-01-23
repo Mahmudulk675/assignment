@@ -23,9 +23,12 @@ var distanceResult = kilometerToMeter(12);
 
 //                     Hotel Cost
 
+
+
 function hotelCost(days) {
     var cost = 0;
 
+   if(days > 0){
     if (days <= 10) {
         cost = days * 100;          // 100$ per day for first 10 days.
         cost = days * 100;          
@@ -43,9 +46,11 @@ function hotelCost(days) {
         cost = firstCost + secondCost + thirdCost;
     }
     return cost;
+   }else{
+       return 'Days can not be negative.'
+   }
 }
-
-var totalCost = hotelCost(65);
+var totalCost = hotelCost(-5);
 // console.log(totalCost);
 
 
@@ -64,8 +69,8 @@ function budgetCalculator(watch, mobile, laptop) {
     var totalCost = watchCost + mobileCost + laptopCost;
     return totalCost;
 }
-var totalBudget = budgetCalculator(2, 6, 1);
- console.log(totalBudget);
+var totalBudget = budgetCalculator(2, 6, 6);
+ // console.log(totalBudget);
 
 
 
@@ -76,15 +81,14 @@ var totalBudget = budgetCalculator(2, 6, 1);
 //                                  Mega friend
 
 
-var friends = ['Dicaprio', 'Tom', 'Deep', 'RoberthdhdhDeNiro', 'Smith', 'MattDamon', 'GeorgeClooney']
+var friends = ['Dicaprio', 'Tom', 'Deep', 'RoberthdhdhDeNiro', 'DavidaaahdhDeNiro', 'Smith', 'MattDamon', 'GeorgeClooney']
 var maxWord = '';
 function megaFriend(friends){
   for(var i = 0; i < friends.length; i++){
     if(friends[i].length > maxWord.length){
       maxWord = friends[i] ;        
     }
-  } 
-   return maxWord;  
+  } return maxWord;   
 } 
 var biggestName = megaFriend(friends);
 // console.log(biggestName);
